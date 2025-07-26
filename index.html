@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Untukmu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe6f0);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: #333;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.2em;
+    }
+
+    .msg {
+      font-size: 1.3em;
+      margin: 10px 20px;
+      max-width: 500px;
+      display: none;
+      animation: fadeIn 0.7s ease-in-out;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: #ff99cc;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ff6699;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hai Rara...</h1>
+  
+  <div class="msg">Beberapa bulan yang lalu aku pernah bilang sesuatu ke kamu...</div>
+  <div class="msg">Dan ternyata... rasa itu nggak pergi, masih ada sampai sekarang.</div>
+  <div class="msg">Aku nggak minta kamu jadi pacarku...</div>
+  <div class="msg">Aku cuma pengen kamu tahu... aku masih sayang, masih peduli sama kamu...</div>
+  <div class="msg">Dan aku tetap doain kamu dari jauh, tanpa berharap apa-apa ✨</div>
+  <div class="msg">Jaga dirimu ya, kamu tetap spesial menurutku 💌</div>
+
+  <button class="btn" onclick="showNext()">Lanjutkan...</button>
+
+  <script>
+    let step = 0;
+    const messages = document.querySelectorAll('.msg');
+    function showNext() {
+      if (step < messages.length) {
+        messages[step].style.display = 'block';
+        step++;
+      } else {
+        document.querySelector(".btn").innerText = "Udah selesai 😊";
+        document.querySelector(".btn").disabled = true;
+      }
+    }
+  </script>
+</body>
+</html>
